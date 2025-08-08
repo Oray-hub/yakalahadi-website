@@ -1,0 +1,385 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body, html {
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #f8f3ff 0%, #e9d8fb 100%) !important;
+  background-image: url('/arka_plan5.jpg'), linear-gradient(135deg, #f8f3ff 0%, #e9d8fb 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+}
+
+body {
+  padding-top: 40px !important;
+}
+
+/* Ana sayfa ve iletişim sayfası için özel padding */
+body[data-page="home"],
+body[data-page="iletisim"] {
+  padding-top: 60px !important;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-top: 40px !important;
+  }
+  
+  body[data-page="home"],
+  body[data-page="iletisim"] {
+    padding-top: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 40px !important;
+  }
+  
+  body[data-page="home"],
+  body[data-page="iletisim"] {
+    padding-top: 60px !important;
+  }
+}
+
+/* Header küçülme animasyonu, kaybolma yok */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #6A0DAD;
+  height: 88px;
+  box-shadow: 0 2px 12px #b48be6;
+  display: flex;
+  align-items: center;
+  transition: height 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s, padding 0.3s;
+}
+.header--shrink {
+  height: 56px !important;
+  box-shadow: 0 2px 12px #b48be6;
+}
+
+@media (max-width: 700px) {
+  .header {
+    height: auto !important;
+    min-height: 88px;
+  }
+  .header--shrink {
+    height: auto !important;
+    min-height: 56px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  transition: height 0.3s cubic-bezier(.4,0,.2,1), padding 0.3s;
+}
+.header--shrink .container {
+  height: 56px !important;
+  padding: 0 16px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    height: auto !important;
+    min-height: 88px;
+  }
+  .header--shrink .container {
+    height: auto !important;
+    min-height: 56px;
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.08rem;
+  transition: color 0.18s, font-size 0.3s, padding 0.3s;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.nav a:hover {
+  background: #fff;
+  color: #6A0DAD;
+}
+.header--shrink .nav a {
+  font-size: 0.92rem;
+  padding: 2px 6px;
+}
+.logo img {
+  transition: width 0.3s, height 0.3s;
+}
+.header--shrink .logo img {
+  width: 40px !important;
+  height: 40px !important;
+}
+.header--shrink .logo img[alt*='Yazı'] {
+  width: 140px !important;
+  height: 40px !important;
+}
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    padding: 0 8px;
+    gap: 8px;
+  }
+  .nav {
+    gap: 14px;
+    font-size: 0.98rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav a {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+  }
+  .logo img {
+    width: 54px !important;
+    height: 54px !important;
+  }
+  .logo img[alt*='Yazı'] {
+    width: 160px !important;
+    height: 40px !important;
+  }
+  
+  /* Header küçüldüğünde mobil kuralları */
+  .header--shrink .container {
+    height: auto !important;
+    padding: 0 8px !important;
+    gap: 8px !important;
+  }
+  .header--shrink .nav {
+    gap: 14px !important;
+    font-size: 0.9rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .header--shrink .nav a {
+    font-size: 0.9rem !important;
+    padding: 6px 8px !important;
+  }
+  .header--shrink .logo img {
+    width: 54px !important;
+    height: 54px !important;
+  }
+  .header--shrink .logo img[alt*='Yazı'] {
+    width: 160px !important;
+    height: 40px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 4px;
+    gap: 6px;
+  }
+  .nav {
+    gap: 8px;
+    font-size: 0.85rem;
+  }
+  .nav a {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+  .logo img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .logo img[alt*='Yazı'] {
+    width: 140px !important;
+    height: 35px !important;
+  }
+  
+  /* Header küçüldüğünde küçük mobil kuralları */
+  .header--shrink .container {
+    padding: 0 4px !important;
+    gap: 6px !important;
+  }
+  .header--shrink .nav {
+    gap: 8px !important;
+    font-size: 0.85rem !important;
+  }
+  .header--shrink .nav a {
+    font-size: 0.8rem !important;
+    padding: 4px 6px !important;
+  }
+  .header--shrink .logo img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .header--shrink .logo img[alt*='Yazı'] {
+    width: 140px !important;
+    height: 35px !important;
+  }
+}
+
+/* ContactForm Responsive Styles */
+@media (max-width: 700px) {
+  form > div {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  form input,
+  form textarea {
+    font-size: 14px !important;
+    padding: 8px 6px !important;
+  }
+  
+  form button {
+    font-size: 16px !important;
+    padding: 10px 24px !important;
+    align-self: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    gap: 8px !important;
+  }
+  
+  form input,
+  form textarea {
+    font-size: 13px !important;
+    padding: 6px 4px !important;
+  }
+  
+  form button {
+    font-size: 14px !important;
+    padding: 8px 20px !important;
+  }
+}
+
+/* Footer Responsive Styles */
+@media (max-width: 1100px) {
+  footer > div:first-child {
+    gap: 60px !important;
+    flex-wrap: wrap !important;
+  }
+  
+  footer > div:first-child > div:nth-child(2),
+  footer > div:first-child > div:nth-child(3) {
+    flex: 1 1 300px !important;
+    max-width: 400px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  footer > div:first-child {
+    flex-direction: column !important;
+    gap: 50px !important;
+    text-align: center !important;
+  }
+  
+  footer > div:first-child > div:first-child {
+    margin-bottom: 0 !important;
+  }
+  
+  footer > div:first-child > div:nth-child(2),
+  footer > div:first-child > div:nth-child(3) {
+    max-width: 500px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  footer {
+    padding: 24px 16px !important;
+    margin-top: 30px !important;
+  }
+  
+  footer > div:first-child {
+    gap: 40px !important;
+  }
+  
+  footer > div:first-child > div:first-child > div {
+    font-size: 16px !important;
+  }
+  
+  footer > div:first-child > div:first-child > div:last-child {
+    font-size: 14px !important;
+  }
+  
+  footer > div:first-child > div:nth-child(2) > div:first-child,
+  footer > div:first-child > div:nth-child(3) > div:first-child {
+    font-size: 18px !important;
+  }
+  
+  footer > div:first-child > div:nth-child(2) > div:nth-child(2) {
+    font-size: 14px !important;
+  }
+  
+  footer > div:first-child > div:nth-child(3) > div:last-child > a {
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 20px 12px !important;
+    margin-top: 24px !important;
+  }
+  
+  footer > div:first-child {
+    gap: 30px !important;
+  }
+  
+  footer > div:first-child > div:first-child > div {
+    font-size: 14px !important;
+  }
+  
+  footer > div:first-child > div:first-child > div:last-child {
+    font-size: 12px !important;
+  }
+  
+  footer > div:first-child > div:nth-child(2) > div:first-child,
+  footer > div:first-child > div:nth-child(3) > div:first-child {
+    font-size: 16px !important;
+  }
+  
+  footer > div:first-child > div:nth-child(2) > div:nth-child(2) {
+    font-size: 13px !important;
+  }
+  
+  footer > div:first-child > div:nth-child(3) > div:last-child > a {
+    font-size: 12px !important;
+  }
+}

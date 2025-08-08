@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yakalahadi.com/sitemap.xml
+
+# Favicon ve icon dosyalarına erişim
+Allow: /icon.png
+Allow: /apple-touch-icon.png
+Allow: /favicon.ico 
