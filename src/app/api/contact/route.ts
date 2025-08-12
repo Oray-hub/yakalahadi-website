@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
 
     // Email gönder
     await resend.emails.send({
-      from: 'YakalaHadi <noreply@yakalahadi.com>',
+      from: 'YakalaHadi <noreply@yakalahadi.com>', // Gerçek domain kullanıyoruz
       to: ['info@yakalahadi.com'],
       subject: subject || 'İletişim Formu - YakalaHadi',
       replyTo: email,
