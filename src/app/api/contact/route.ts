@@ -26,10 +26,9 @@ export async function POST(req: NextRequest) {
 
     // Email gönder
     await resend.emails.send({
-      from: 'YakalaHadi <noreply@yakalahadi.com>', // Gerçek domain kullanıyoruz
+      from: 'YakalaHadi <noreply@yakalahadi.com>',
       to: ['info@yakalahadi.com'],
       subject: subject || 'İletişim Formu - YakalaHadi',
-      replyTo: email,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px;">
           <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
@@ -44,12 +43,13 @@ export async function POST(req: NextRequest) {
               </div>
             </div>
             <div style="text-align: center; margin-top: 20px; color: #666; font-size: 12px;">
-              Bu mesaj YakalaHadi web sitesi iletişim formundan gönderilmiştir.
+              Bu mesaj YakalaHadi web sitesi iletişim formundan gönderilmiştir.<br/>
+              Yanıtlamak için: ${email}
             </div>
           </div>
         </div>
       `,
-      text: `Ad: ${name} ${surname}\nEmail: ${email}\nKonu: ${subject || 'Belirtilmemiş'}\nMesaj: ${message}`
+      text: `Ad: ${name} ${surname}\nEmail: ${email}\nKonu: ${subject || 'Belirtilmemiş'}\nMesaj: ${message}\n\nYanıtlamak için: ${email}`
     });
 
     return NextResponse.json({ success: true, message: 'Mesaj başarıyla gönderildi' });
