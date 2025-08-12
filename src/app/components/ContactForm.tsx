@@ -3,14 +3,14 @@ import React, { useState } from "react";
 
 export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertType, setAlertType] = useState<'success' | 'error'>('success');
+  const [alertMessage, setAlertMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    setSubmitStatus('idle');
-    setErrorMessage('');
+    setShowAlert(false);
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -33,46 +33,91 @@ export default function ContactForm() {
       const result = await res.json();
 
       if (res.ok && result.success) {
-        setSubmitStatus('success');
+        setAlertType('success');
+        setAlertMessage('Mesajınız başarıyla gönderildi!');
         form.reset();
-        setTimeout(() => setSubmitStatus('idle'), 3000);
       } else {
-        setSubmitStatus('error');
-        setErrorMessage(result.error || 'Bir hata oluştu, lütfen tekrar deneyin.');
+        setAlertType('error');
+        setAlertMessage(result.error || 'Bir hata oluştu, lütfen tekrar deneyin.');
       }
     } catch (error) {
-      setSubmitStatus('error');
-      setErrorMessage('Bağlantı hatası oluştu, lütfen tekrar deneyin.');
+      setAlertType('error');
+      setAlertMessage('Bağlantı hatası oluştu, lütfen tekrar deneyin.');
     } finally {
       setIsLoading(false);
+      setShowAlert(true);
+      // 5 saniye sonra alert'i otomatik kapat
+      setTimeout(() => setShowAlert(false), 5000);
     }
   };
 
   return (
     <div>
-      {submitStatus === 'success' && (
+      {/* Alert Dialog */}
+      {showAlert && (
         <div style={{
-          background: '#4CAF50',
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          zIndex: 1000,
+          minWidth: '300px',
+          maxWidth: '400px',
+          background: alertType === 'success' ? '#4CAF50' : '#f44336',
           color: 'white',
-          padding: '12px',
+          padding: '16px 20px',
           borderRadius: '8px',
-          marginBottom: '16px',
-          textAlign: 'center'
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          animation: 'slideIn 0.3s ease-out'
         }}>
-          Mesajınız başarıyla gönderildi!
-        </div>
-      )}
-
-      {submitStatus === 'error' && (
-        <div style={{
-          background: '#f44336',
-          color: 'white',
-          padding: '12px',
-          borderRadius: '8px',
-          marginBottom: '16px',
-          textAlign: 'center'
-        }}>
-          {errorMessage}
+          {/* İkon */}
+          <div style={{
+            fontSize: '24px',
+            display: 'flex',
+            alignItems: 'center'
+          }}>
+            {alertType === 'success' ? '✅' : '❌'}
+          </div>
+          
+          {/* Mesaj */}
+          <div style={{ flex: 1 }}>
+            <div style={{ fontWeight: 'bold', marginBottom: '4px' }}>
+              {alertType === 'success' ? 'Başarılı!' : 'Hata!'}
+            </div>
+            <div style={{ fontSize: '14px' }}>
+              {alertMessage}
+            </div>
+          </div>
+          
+          {/* Kapatma Butonu */}
+          <button
+            onClick={() => setShowAlert(false)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'white',
+              fontSize: '18px',
+              cursor: 'pointer',
+              padding: '0',
+              width: '24px',
+              height: '24px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '50%',
+              transition: 'background 0.2s'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(255,255,255,0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'none';
+            }}
+          >
+            ×
+          </button>
         </div>
       )}
 
@@ -200,6 +245,19 @@ export default function ContactForm() {
           {isLoading ? 'Gönderiliyor...' : 'Gönder'}
         </button>
       </form>
+
+      <style jsx>{`
+        @keyframes slideIn {
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </div>
   );
 } 
