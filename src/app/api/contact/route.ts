@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,51 +15,41 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Environment variables kontrolü
-    if (!process.env.SMTP_HOST || !process.env.SMTP_PORT || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      console.error('SMTP environment variables eksik');
+    // Resend API key kontrolü
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY environment variable eksik');
       return NextResponse.json(
         { success: false, error: 'Sunucu yapılandırma hatası' },
         { status: 500 }
       );
     }
 
-    // SMTP transporter oluştur
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: process.env.SMTP_PORT === '465', // 465 portu için secure: true
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
-      },
-      // Vercel için ek ayarlar
-      tls: {
-        rejectUnauthorized: false
-      }
-    });
-
     // Email gönder
-    await transporter.sendMail({
-      from: process.env.SMTP_USER || 'info@yakalahadi.com',
-      to: 'info@yakalahadi.com',
+    await resend.emails.send({
+      from: 'YakalaHadi <noreply@yakalahadi.com>',
+      to: ['info@yakalahadi.com'],
       subject: subject || 'İletişim Formu - YakalaHadi',
       replyTo: email,
-      text: `Ad: ${name} ${surname}\nEmail: ${email}\nKonu: ${subject || 'Belirtilmemiş'}\nMesaj: ${message}`,
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333;">Yeni İletişim Formu Mesajı</h2>
-          <div style="background: #f5f5f5; padding: 20px; border-radius: 8px;">
-            <p><strong>Ad Soyad:</strong> ${name} ${surname}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Konu:</strong> ${subject || 'Belirtilmemiş'}</p>
-            <p><strong>Mesaj:</strong></p>
-            <div style="background: white; padding: 15px; border-radius: 5px; margin-top: 10px;">
-              ${message.replace(/\n/g, '<br>')}
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px;">
+          <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h2 style="color: #333; margin-bottom: 20px; text-align: center;">Yeni İletişim Formu Mesajı</h2>
+            <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; border-left: 4px solid #007bff;">
+              <p style="margin: 10px 0;"><strong style="color: #333;">Ad Soyad:</strong> ${name} ${surname}</p>
+              <p style="margin: 10px 0;"><strong style="color: #333;">Email:</strong> <a href="mailto:${email}" style="color: #007bff;">${email}</a></p>
+              <p style="margin: 10px 0;"><strong style="color: #333;">Konu:</strong> ${subject || 'Belirtilmemiş'}</p>
+              <p style="margin: 10px 0;"><strong style="color: #333;">Mesaj:</strong></p>
+              <div style="background: white; padding: 15px; border-radius: 5px; margin-top: 10px; border: 1px solid #e9ecef;">
+                ${message.replace(/\n/g, '<br>')}
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px; color: #666; font-size: 12px;">
+              Bu mesaj YakalaHadi web sitesi iletişim formundan gönderilmiştir.
             </div>
           </div>
         </div>
-      `
+      `,
+      text: `Ad: ${name} ${surname}\nEmail: ${email}\nKonu: ${subject || 'Belirtilmemiş'}\nMesaj: ${message}`
     });
 
     return NextResponse.json({ success: true, message: 'Mesaj başarıyla gönderildi' });
