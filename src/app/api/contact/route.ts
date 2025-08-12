@@ -5,10 +5,13 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
+    console.log('API çağrısı başladı');
     const { name, surname, email, subject, message } = await req.json();
+    console.log('Form verileri alındı:', { name, surname, email, subject, message });
 
     // Gerekli alanları kontrol et
     if (!name || !surname || !email || !message) {
+      console.log('Eksik alanlar var');
       return NextResponse.json(
         { success: false, error: 'Tüm gerekli alanları doldurun' },
         { status: 400 }
@@ -24,8 +27,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    console.log('API key mevcut, email gönderme başlıyor...');
+
     // Email gönder
-    await resend.emails.send({
+    const emailResult = await resend.emails.send({
       from: 'YakalaHadi <noreply@yakalahadi.com>',
       to: ['info@yakalahadi.com'],
       subject: subject || 'İletişim Formu - YakalaHadi',
@@ -52,9 +57,16 @@ export async function POST(req: NextRequest) {
       text: `Ad: ${name} ${surname}\nEmail: ${email}\nKonu: ${subject || 'Belirtilmemiş'}\nMesaj: ${message}\n\nYanıtlamak için: ${email}`
     });
 
+    console.log('Email gönderme sonucu:', emailResult);
+    console.log('Email başarıyla gönderildi');
+
     return NextResponse.json({ success: true, message: 'Mesaj başarıyla gönderildi' });
   } catch (error) {
     console.error('Email gönderme hatası:', error);
+    console.error('Hata detayları:', {
+      message: error instanceof Error ? error.message : 'Bilinmeyen hata',
+      stack: error instanceof Error ? error.stack : undefined
+    });
     return NextResponse.json(
       { success: false, error: 'Mesaj gönderilirken bir hata oluştu' },
       { status: 500 }
