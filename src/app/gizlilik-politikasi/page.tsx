@@ -5,7 +5,7 @@ export default function GizlilikPolitikasi() {
     <div style={{marginTop: '80px', marginBottom: '0'}}>
       <div style={{maxWidth: 800, margin: '40px auto', padding: 32, background: '#fff', borderRadius: 18, boxShadow: '0 2px 12px #eee'}}>
         <h1 style={{fontSize: 28, fontWeight: 700, color: '#6A0DAD', marginBottom: 18}}>Gizlilik ve Güvenlik Politikası</h1>
-        <div style={{fontSize: 16, color: '#333', marginBottom: 8, fontWeight: 500}}>Yürürlük Tarihi: 30/06/2025</div>
+        <div style={{fontSize: 16, color: '#333', marginBottom: 8, fontWeight: 500}}>Yürürlük Tarihi: 12/08/2025</div>
         <div style={{marginTop: 24, marginBottom: 24, display:'flex', flexDirection:'column', gap:24}}>
           <section>
             <div style={{fontSize:15}}>

@@ -4,17 +4,17 @@ import { useState } from 'react';
 const userSteps = [
   { icon: '📍', text: 'Konumunuza göre en yakın fırsat ve kampanyalar listelenir.' },
   { icon: '🔔', text: 'Kampanyalar bildirim olarak gelir, tıklayarak detayları görebilirsiniz.' },
-  { icon: '🎯', text: '“YakalaHadi” butonuna tıklayarak fırsatı yakalarsınız.' },
-  { icon: '🧾', text: 'Fırsatı yakaladığınızda size özel QR kod oluşturulur, firmaya göstererek kullanırsınız.' },
+  { icon: '🎯', text: 'Eğer kampanya Yakalahadi ise “YakalaHadi” butonuna tıklayarak fırsatı yakalarsınız. Eğer indirim kampanyası ise tüm indirimlerden anında haberdar olursunuz.' },
+  { icon: '🧾', text: 'Yakalahadi fırsatını yakaladığınızda size özel QR kod oluşturulur, firmaya göstererek kullanırsınız.' },
   { icon: '⏳', text: 'Her kullanıcı her kampanyadan bir kez faydalanabilir, QR kodlar stokla sınırlıdır.' },
   { icon: '⭐', text: 'Hizmet sonrası değerlendirme ve yorum yapabilirsiniz.' },
 ];
 const companySteps = [
   { icon: '📝', text: '“Firma Girişi” üzerinden kayıt olun veya giriş yapın.' },
-  { icon: '➕', text: 'Firma panelinden yeni kampanya oluşturun: indirim veya YakalaHadi fırsatı seçebilirsiniz.' },
+  { icon: '➕', text: 'Firma panelinden yeni kampanya oluşturun."indirim kampanyası" veya "YakalaHadi kampanyası" seçebilirsiniz.' },
   { icon: '✏️', text: 'Kampanya detaylarını doldurun, hedef kitlenizi ve konumunuzu belirleyin.' },
-  { icon: '✅', text: 'Kampanya aktif olduğunda kullanıcılar QR kod ile fırsatınızı kullanabilir.' },
-  { icon: '📲', text: 'Kullanıcı QR kodunu getirdiğinde, “QR Okut” bölümünden kodu okutun ve işlemi onaylayın.' },
+  { icon: '✅', text: 'İndirim kampanyalarında, belirlediğiniz bölge içinde kalan tüm kullanıcılar indirimlerinizden anında haberdar olur.Yakalahadi kampanyalarında ise, girdiğiniz stoğa göre belirlediğiniz bölge içinde kalan kullanıcılar anında fırsatı yakalar.' },
+  { icon: '📲', text: 'Yakalanan fırsat için kullanıcı QR kodunu getirdiğinde, “QR Okut” bölümünden kodu okutun ve işlemi onaylayın.' },
   { icon: '📊', text: 'Kampanya performansınızı panelden takip edebilir, kullanıcı yorumlarını görebilirsiniz.' },
 ];
 

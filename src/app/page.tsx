@@ -23,7 +23,7 @@ function useFadeIn(delay = 0) {
 
 const heroSlides = [
   {
-    img: '/firma_arayuz.png',
+    img: '/kullanici_arayuz.png',
     alt: 'Kullanıcı Arayüzü',
     content: (
       <>
@@ -41,11 +41,11 @@ const heroSlides = [
     )
   },
   {
-    img: '/firma_arayuz.png',
+    img: '/kullanici_arayuz1.png',
     alt: 'Kullanıcı Arayüzü',
     content: (
       <>
-        <div className={styles.slogan}>Kullanıcılarımız için</div>
+        <div className={styles.slogan}>Kullanıcılar için</div>
         <ul style={{fontSize:15, color:'#222', margin:'12px auto 0 auto', fontWeight:400, lineHeight:1.7, maxWidth:480, textAlign:'justify', background:'#fff', borderRadius:0, boxShadow:'none', padding:0, listStyle:'disc inside'}}>
           <li>Uygulamaya e-posta, Google veya Apple hesabınızla saniyeler içinde giriş yapabilirsiniz.</li>
           <li>Konumunuza göre yakınınızdaki YakalaHadi fırsatlarını ve indirim kampanyalarını bildirim olarak anında görün.</li>
@@ -63,14 +63,15 @@ const heroSlides = [
     alt: 'Firma Arayüzü',
     content: (
       <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',height:'100%'}}>
-        <div className={styles.slogan} style={{marginBottom: '10px'}}>Firmalarımız için</div>
+        <div className={styles.slogan} style={{marginBottom: '10px'}}>Firmalar için</div>
         <ul style={{fontSize:15, color:'#222', margin:'12px auto 0 auto', fontWeight:400, lineHeight:1.7, maxWidth:480, textAlign:'justify', background:'#fff', borderRadius:0, boxShadow:'none', padding:0, listStyle:'disc inside'}}>
           <li>Firma profilinizi oluşturun, bilgilerinizi eksiksiz ve doğru girerek tüm faaliyet alanlarını içeren listeden faaliyet alanınızı seçin ve onay sonrası kaydolun.</li>
           <li>Dakikalar içinde fırsat veya indirim kampanyası oluşturun: ürün, fiyat, stok, kampanya süresi ve bildirim yarıçapını belirleyin.</li>
           <li>Fırsat veya indirim kampanyası oluşturduğunuzda, hedef müşteri kitlenize anında bildirim gider.</li>
           <li>Oluşturduğunuz fırsatı yakalayan müşteri mağazanıza gelir, QR kodunu uygulamadan size okutur ve indirimli ürününü avantajlı fiyatı ile alır.</li>
           <li>Kullanıcılar sizi puanladıkça güvenilirlik skorunuz artar. Böylece yeni müşteriler için daha cazip hale gelirsiniz.</li>
-          <li>Yerel fırsatlar için istediğiniz yarıçapı seçerek hedefinize ulaşın, Türkiye geneli fırsatlarda ise geniş yarıçapla daha çok kullanıcıya ulaşın.</li>
+          <li>Yerel fırsatlar için istediğiniz yarıçapı seçerek hedefinize ulaşın, Türkiye geneli kampanyalarda ise tüm Türkiye
+'deki kullanıcılara anında indirimleriniz gitsin.</li>
           <li>Bu sayede YakalaHadi sadece bir indirim değil, sizin için etkili bir reklam aracına dönüşür.</li>
         </ul>
       </div>
@@ -87,8 +88,13 @@ export default function Home() {
   const [heroIndex, setHeroIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  
+  // Swipe functionality
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   useEffect(() => {
+    // Tüm cihazlarda otomatik geçiş açık
     if (!isPlaying) {
       if (intervalRef.current) clearInterval(intervalRef.current);
       return;
@@ -101,6 +107,50 @@ export default function Home() {
     };
   }, [isPlaying]);
 
+
+
+  // Mouse hover pause/play
+  const handleMouseEnter = () => {
+    setIsPlaying(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPlaying(true);
+  };
+
+  // Swipe handlers
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    // Dokunma başladığında otomatik geçişi durdur
+    setIsPlaying(false);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+    // Dokunma devam ederken otomatik geçişi durdur
+    setIsPlaying(false);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && heroIndex < heroSlides.length - 1) {
+      goTo(heroIndex + 1);
+    } else if (isRightSwipe && heroIndex > 0) {
+      goTo(heroIndex - 1);
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
+    
+    // Dokunma bittiğinde otomatik geçişi başlat
+    setIsPlaying(true);
+  };
+
   // Manuel geçişte timer'ı sıfırla
   const goTo = (idx: number) => {
     setHeroIndex(idx);
@@ -111,13 +161,7 @@ export default function Home() {
       }, 5000);
     }
   };
-  const prev = () => {
-    if (heroIndex > 0) goTo(heroIndex - 1);
-  };
-  const next = () => {
-    if (heroIndex < heroSlides.length - 1) goTo(heroIndex + 1);
-    else goTo(0);
-  };
+
 
   // Slider data
   const sliderData = [
@@ -125,12 +169,12 @@ export default function Home() {
       title: 'Kullanıcı Kılavuzu',
       content: (
         <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:18}}>
-          <Image src="/firma_arayuz.png" alt="Kullanıcı Arayüzü" width={180} height={320} className={styles.sliderImage} />
+          <Image src="/kullanici_arayuz.png" alt="Kullanıcı Arayüzü" width={180} height={320} className={styles.sliderImage} />
           <div style={{maxWidth:400, width:'100%'}}>
             <h2 style={{color:'#6A0DAD', fontSize:22, fontWeight:700, marginBottom:18, textAlign:'center'}}>YakalaHadi Kullanıcı Kılavuzu</h2>
             <ul className={styles.sliderList}>
               <li>Uygulama bulunduğunuz konumu kullanarak size en yakın YakalaHadi fırsatlarını ve indirim kampanyalarını sunar.</li>
-              <li>Kampanyalar ve indirimler cihazınıza bildirim olarak gelir. Bildirime tıklayarak detayları görebilirsiniz.</li>
+              <li>Kampanyalar ve indirimler cihazınızıza bildirim olarak gelir. Bildirime tıklayarak detayları görebilirsiniz.</li>
               <li>YakalaHadi fırsatı ise "YakalaHadi" butonuna tıklayarak fırsatı yakalarsınız. İndirim kampanyası ise bildirimdeki şekilde bilgilendirilirsiniz.</li>
               <li>YakalaHadi fırsatını yakaladığınızda size özel bir QR kod oluşturulur. Bu kodu firmaya göstererek ürünü indirimli alabilirsiniz.</li>
               <li>QR kodlar stokla sınırlıdır ve her kullanıcı her kampanyadan bir defa faydalanabilir. QR kod ikinci defa kullanılamaz.</li>
@@ -170,12 +214,19 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <section className={styles.hero} ref={heroRef}>
-        <div className={styles.heroSliderWrapper} style={{position:'relative'}}>
-          {/* Sol ok */}
-          <button onClick={prev} disabled={heroIndex === 0} style={{position:'absolute',left:8,top:'50%',transform:'translateY(-50%)',background:'#f3e7ff',border:'none',borderRadius:18,padding:'6px 12px',fontSize:22,color:'#6A0DAD',cursor:heroIndex===0?'not-allowed':'pointer',boxShadow:'0 2px 8px #eee',zIndex:2,opacity:heroIndex===0?0.4:0.85}}>&lt;</button>
+        <div 
+          className={styles.heroSliderWrapper} 
+          style={{position:'relative'}}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+
           <div
             className={styles.heroSliderTrack}
             style={{ transform: `translateX(-${heroIndex * 100}%)` }}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
           >
             {heroSlides.map((slide, i) => (
               <div className={styles.heroSliderSlide} key={i}>
@@ -188,21 +239,31 @@ export default function Home() {
               </div>
             ))}
           </div>
-          {/* Sağ ok */}
-          <button onClick={next} disabled={heroIndex === heroSlides.length-1} style={{position:'absolute',right:8,top:'50%',transform:'translateY(-50%)',background:'#f3e7ff',border:'none',borderRadius:18,padding:'6px 12px',fontSize:22,color:'#6A0DAD',cursor:heroIndex===heroSlides.length-1?'not-allowed':'pointer',boxShadow:'0 2px 8px #eee',zIndex:2,opacity:heroIndex===heroSlides.length-1?0.4:0.85}}>&gt;</button>
+
         </div>
-        {/* Dot navigation en alta alındı */}
-        <div style={{display:'flex',justifyContent:'center',gap:10,marginTop:32,alignItems:'center'}}>
+        {/* Dot navigation - ortalı */}
+        <div style={{
+          display:'flex',
+          justifyContent: 'center',
+          marginTop:32,
+          width: '100%'
+        }}>
           {heroSlides.map((img, i) => (
-            <span key={i} style={{width:13,height:13,borderRadius:'50%',background:i===heroIndex?'#6A0DAD':'#e0c3f7',display:'inline-block',transition:'background 0.2s'}}></span>
+            <span 
+              key={i} 
+              style={{
+                width:13,
+                height:13,
+                borderRadius:'50%',
+                background:i===heroIndex?'#6A0DAD':'#e0c3f7',
+                display:'inline-block',
+                transition:'background 0.2s',
+                margin:'0 5px',
+                cursor:'pointer'
+              }}
+              onClick={() => setHeroIndex(i)}
+            ></span>
           ))}
-          <button
-            onClick={() => setIsPlaying(p => !p)}
-            style={{marginLeft:18,background:'#f3e7ff',border:'none',borderRadius:18,padding:'4px 14px',fontSize:18,color:'#6A0DAD',cursor:'pointer',boxShadow:'0 2px 8px #eee',opacity:0.85}}
-            aria-label={isPlaying ? 'Durdur' : 'Başlat'}
-          >
-            {isPlaying ? '⏸' : '▶️'}
-          </button>
         </div>
       </section>
       <section className={styles.howItWorksSection + ' ' + styles.advantages}>
@@ -268,7 +329,7 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.whoCanUseSection + ' ' + styles.exampleCampaigns} ref={campRef}>
-        <h2>Tüm Firma ve Esnaflarımız için her kategoriye uygun kullanım</h2>
+        <h2>Tüm Firma ve Esnaflar için her kategoriye uygun kullanım</h2>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',

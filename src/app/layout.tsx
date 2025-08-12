@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   title: 'YakalaHadi',
   description: 'Gerçek zamanlı fırsat ve kampanya uygulaması',
   icons: {
-    icon: '/icon.png',
-    shortcut: '/icon.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
   robots: {
@@ -47,9 +47,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="tr">
       <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icon.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/icon.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "YakalaHadi",
+              url: "https://yakalahadi.com",
+              logo: "https://yakalahadi.com/logo6.png",
+            }),
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
