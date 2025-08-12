@@ -57,8 +57,9 @@ export default function ContactForm() {
       {showAlert && (
         <div style={{
           position: 'fixed',
-          top: '20px',
-          right: '20px',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
           zIndex: 1000,
           minWidth: '300px',
           maxWidth: '400px',
@@ -249,11 +250,11 @@ export default function ContactForm() {
       <style jsx>{`
         @keyframes slideIn {
           from {
-            transform: translateX(100%);
+            transform: translate(-50%, -50%) scale(0.8);
             opacity: 0;
           }
           to {
-            transform: translateX(0);
+            transform: translate(-50%, -50%) scale(1);
             opacity: 1;
           }
         }
