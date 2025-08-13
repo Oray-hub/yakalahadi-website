@@ -226,13 +226,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Image 
               src="/logo_band_colored@3x.png" 
               alt="Ödeme Yöntemleri" 
-              width={200} 
-              height={60} 
+              width={300} 
+              height={90} 
               style={{
                 maxWidth: '100%',
-                height: 'auto',
-                filter: 'brightness(0) invert(1)',
-                opacity: '0.9'
+                height: 'auto'
               }}
             />
           </div>
