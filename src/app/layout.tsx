@@ -216,6 +216,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
             </div>
           </div>
+          {/* Ödeme Yöntemi Logosu */}
+          <div style={{
+            textAlign: 'center',
+            marginTop: '20px',
+            paddingTop: '16px',
+            borderTop: '1px solid rgba(255,255,255,0.2)'
+          }}>
+            <Image 
+              src="/logo_band_colored@3x.png" 
+              alt="Ödeme Yöntemleri" 
+              width={200} 
+              height={60} 
+              style={{
+                maxWidth: '100%',
+                height: 'auto',
+                filter: 'brightness(0) invert(1)',
+                opacity: '0.9'
+              }}
+            />
+          </div>
           <div style={{
             textAlign: 'center',
             color: '#fff',
