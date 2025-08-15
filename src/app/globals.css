@@ -153,6 +153,8 @@ body[data-page="iletisim"] {
 }
 .logo img {
   transition: width 0.3s, height 0.3s;
+  filter: none !important;
+  opacity: 1 !important;
 }
 .header--shrink .logo img {
   width: 40px !important;
