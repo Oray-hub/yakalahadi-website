@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       "@type": "Organization",
       name: "YakalaHadi",
       url: "https://yakalahadi.com",
-      logo: "https://yakalahadi.com/favicon.ico",
+      logo: "/logo-512.png"
     })
   }
 };
