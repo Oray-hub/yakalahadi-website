@@ -19,8 +19,7 @@ export default function Header() {
       <header className={`header${isScrolled ? ' header--shrink' : ''}`} style={{position:'fixed',top:0,left:0,zIndex:1000,background:'#6A0DAD',width:'100%'}}>
         <div className="container">
           <Link href="/" className="logo" style={{display:'flex',alignItems:'center',gap:16,justifyContent:'flex-start'}}>
-            <Image src="/YakalaHadi_logo.png" alt="YakalaHadi Logo" width={76} height={76} />
-            <Image src="/YakalaHadi_logo.png" alt="YakalaHadi Yazı" width={280} height={76} />
+            <Image src="/YakalaHadi_logo.png" alt="YakalaHadi Logo" width={120} height={76} />
           </Link>
           <nav className="nav">
             <Link href="/">Ana Sayfa</Link>
