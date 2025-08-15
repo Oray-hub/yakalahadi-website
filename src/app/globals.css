@@ -273,8 +273,9 @@ body[data-page="iletisim"] {
     height: 40px !important;
   }
   .logo img {
-    max-width: 60vw;
-    max-height: 64px;
+    max-width: 70vw !important;
+    min-width: 70px !important;
+    height: auto !important;
   }
   .container {
     padding: 0 8px;
@@ -296,8 +297,9 @@ body[data-page="iletisim"] {
     height: 36px !important;
   }
   .logo img {
-    max-width: 80vw;
-    max-height: 56px;
+    max-width: 90vw !important;
+    min-width: 48px !important;
+    height: auto !important;
   }
   .container {
     flex-direction: column;
