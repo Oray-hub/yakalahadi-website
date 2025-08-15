@@ -154,7 +154,7 @@ body[data-page="iletisim"] {
 .logo img {
   width: 216px;
   height: 136.8px;
-  transition: width 0.3s, height 0.3s;
+  transition: width 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1);
   object-fit: contain;
   display: block;
 }
