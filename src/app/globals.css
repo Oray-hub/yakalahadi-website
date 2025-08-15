@@ -152,11 +152,13 @@ body[data-page="iletisim"] {
   padding: 2px 6px;
 }
 .logo img {
-  width: 205px;
-  height: 123px;
-  transition: width 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1);
+  height: 100%;
+  max-height: 100%;
+  width: auto;
+  max-width: 90vw;
   object-fit: contain;
   display: block;
+  transition: width 0.4s cubic-bezier(.4,0,.2,1), height 0.4s cubic-bezier(.4,0,.2,1);
 }
 .header--shrink .logo img {
   max-width: 110px !important;
@@ -271,34 +273,42 @@ body[data-page="iletisim"] {
     height: 40px !important;
   }
   .logo img {
-    width: 120px;
-    height: 60px;
+    max-width: 60vw;
+    max-height: 64px;
   }
-  .header--shrink .logo img {
-    max-width: 70px !important;
-    max-height: 24px !important;
+  .container {
+    padding: 0 8px;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  .nav {
+    gap: 18px;
+    font-size: 1.1rem;
+    padding-top: 4px;
   }
 }
 @media (max-width: 600px) {
   .header {
-    height: 48px;
+    height: 56px;
   }
   .header--shrink {
-    height: 32px !important;
+    height: 36px !important;
   }
   .logo img {
-    width: 80px;
-    height: 32px;
-  }
-  .header--shrink .logo img {
-    max-width: 40px !important;
-    max-height: 16px !important;
-  }
-  .nav {
-    gap: 12px;
+    max-width: 80vw;
+    max-height: 56px;
   }
   .container {
-    padding: 0 8px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4px;
+    height: 100%;
+  }
+  .nav {
+    gap: 10px;
+    font-size: 1rem;
+    padding-top: 2px;
   }
 }
 
