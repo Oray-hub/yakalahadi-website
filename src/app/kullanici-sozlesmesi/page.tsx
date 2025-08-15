@@ -49,7 +49,7 @@ export default function KullaniciSozlesmesi() {
         </section>
         <section>
           <h2 style={{color:'#111', fontWeight:500}}>11. İletişim</h2>
-          <div style={{fontSize:15}}>Her türlü görüş, soru ve destek talepleriniz için <a href="mailto:destek@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>destek@yakalahadi.com</a> adresine e-posta gönderebilirsiniz. Adres: Toros mah. 78143 sk. Hilal Tower No: 4/A Çukurova / Adana</div>
+          <div style={{fontSize:15}}>Her türlü görüş, soru ve destek talepleriniz için <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a> adresine e-posta gönderebilirsiniz. Adres: Toros mah. 78143 sk. Hilal Tower No: 4/A Çukurova / Adana</div>
         </section>
               </div>
       </div>

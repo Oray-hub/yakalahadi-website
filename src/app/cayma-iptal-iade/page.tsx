@@ -16,7 +16,7 @@ export default function CaymaIptalIade() {
           <section>
             <h2 style={{color:'#222', fontWeight:500, fontSize:18, marginBottom:6}}>2. Cayma Hakkı</h2>
             <div style={{fontSize:15}}>
-              6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği gereği, dijital içerik ve anında ifa edilen hizmetlerde cayma hakkı istisnası uygulanır. Firma, hizmetin ifasına başlandığı anda cayma hakkını kaybeder. Hizmetin ifasına başlanmamışsa, 14 gün içinde cayma hakkı kullanılabilir. Cayma talepleri <a href="mailto:destek@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>destek@yakalahadi.com</a> adresine iletilmelidir.
+              6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği gereği, dijital içerik ve anında ifa edilen hizmetlerde cayma hakkı istisnası uygulanır. Firma, hizmetin ifasına başlandığı anda cayma hakkını kaybeder. Hizmetin ifasına başlanmamışsa, 14 gün içinde cayma hakkı kullanılabilir. Cayma talepleri <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a> adresine iletilmelidir.
             </div>
           </section>
           <section>
@@ -25,7 +25,7 @@ export default function CaymaIptalIade() {
               - Dijital hizmetin sunulmasına başlanmamışsa, firma tarafından yapılan satın alma işlemi iptal edilebilir ve ücret iadesi talep edilebilir.<br/>
               - Hizmetin sunulmasına başlandıktan sonra iptal ve iade mümkün değildir.<br/>
               - İade talepleri, ödeme yapılan PayTR altyapısı üzerinden ve yasal mevzuata uygun şekilde gerçekleştirilir.<br/>
-              - İptal/iade talepleri için <a href="mailto:destek@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>destek@yakalahadi.com</a> adresine başvurulmalıdır.
+              - İptal/iade talepleri için <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a> adresine başvurulmalıdır.
             </div>
           </section>
           <section>
@@ -38,7 +38,7 @@ export default function CaymaIptalIade() {
           <section>
             <h2 style={{color:'#222', fontWeight:500, fontSize:18, marginBottom:6}}>5. İletişim</h2>
             <div style={{fontSize:15}}>
-              Tüm cayma, iptal ve iade talepleriniz için <a href="mailto:destek@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>destek@yakalahadi.com</a> adresine e-posta gönderebilirsiniz.
+              Tüm cayma, iptal ve iade talepleriniz için <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a> adresine e-posta gönderebilirsiniz.
             </div>
           </section>
         </div>

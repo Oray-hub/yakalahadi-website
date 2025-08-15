@@ -11,7 +11,7 @@ export default function Kvkk() {
             <h2 style={{color:'#222', fontWeight:500, fontSize:18, marginBottom:6}}>1. Veri Sorumlusu</h2>
             <div style={{fontSize:15, marginBottom:4}}>Kişisel verileriniz, veri sorumlusu sıfatıyla Yakalahadi Yazılım Hizmetleri ltd.Şti (“Yakalahadi”) tarafından 6698 sayılı KVKK kapsamında işlenmektedir.</div>
             <div style={{fontSize:15}}>VKN: 3941397063</div>
-            <div style={{fontSize:15}}>E-posta: <a href="mailto:destek@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>destek@yakalahadi.com</a></div>
+            <div style={{fontSize:15}}>E-posta: <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a></div>
             <div style={{fontSize:15}}>Adres: Toros mah. 78143 sk. Hilal Tower No: 4/A Çukurova / Adana</div>
           </section>
           <section>
@@ -57,7 +57,7 @@ export default function Kvkk() {
               <li>Otomatik analiz sonucu itiraz etme</li>
               <li>Zarara uğrarsanız zararınızın karşılanmasını talep etme</li>
             </ul>
-            <div style={{fontSize:15,marginTop:8}}>Bu haklar için <a href="mailto:destek@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>destek@yakalahadi.com</a> adresine başvurabilirsiniz.</div>
+            <div style={{fontSize:15,marginTop:8}}>Bu haklar için <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a> adresine başvurabilirsiniz.</div>
           </section>
           <section>
             <h2 style={{color:'#222', fontWeight:500, fontSize:18, marginBottom:6}}>8. Metin’deki Değişiklikler</h2>

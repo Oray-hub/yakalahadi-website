@@ -181,7 +181,7 @@ export default function Home() {
               <li>QR kodunuzu okuttuktan sonra firmadan aldığınız hizmeti değerlendirebilir ve yorum yapabilirsiniz.</li>
             </ul>
             <div style={{fontSize:15, color:'#6A0DAD', textAlign:'center'}}>
-              <b>Destek:</b> <a href="mailto:destek@yakalahadi.com">destek@yakalahadi.com</a>
+              <b>Destek:</b> <a href="mailto:info@yakalahadi.com">info@yakalahadi.com</a>
             </div>
           </div>
         </div>
@@ -203,7 +203,7 @@ export default function Home() {
               <li>Kampanya performansınızı panelden takip edebilir, kullanıcı yorumlarını görebilirsiniz.</li>
             </ul>
             <div style={{fontSize:15, color:'#6A0DAD', textAlign:'center'}}>
-              <b>Firma Destek:</b> <a href="mailto:destek@yakalahadi.com">destek@yakalahadi.com</a>
+              <b>Firma Destek:</b> <a href="mailto:info@yakalahadi.com">info@yakalahadi.com</a>
             </div>
           </div>
         </div>
