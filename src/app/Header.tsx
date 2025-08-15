@@ -20,7 +20,7 @@ export default function Header() {
         <div className="container">
           <Link href="/" className="logo" style={{display:'flex',alignItems:'center',gap:16,justifyContent:'flex-start'}}>
             <Image src="/YakalaHadi.png" alt="YakalaHadi Yazı" width={280} height={76} />
-            <Image src="/logo.gif" alt="YakalaHadi Logo" width={48} height={48} />
+            <Image src="/logo.gif" alt="YakalaHadi Logo" width={62} height={62} />
           </Link>
           <nav className="nav">
             <Link href="/">Ana Sayfa</Link>
