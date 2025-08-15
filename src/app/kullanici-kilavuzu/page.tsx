@@ -24,12 +24,12 @@ export default function KullaniciKilavuzu() {
     {
       title: 'Kullanıcı Kılavuzu',
       steps: userSteps,
-      support: 'destek@yakalahadi.com',
+      support: 'info@yakalahadi.com',
     },
     {
       title: 'Firma Kılavuzu',
       steps: companySteps,
-      support: 'destek@yakalahadi.com',
+      support: 'info@yakalahadi.com',
     }
   ];
 

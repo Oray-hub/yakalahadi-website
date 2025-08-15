@@ -35,7 +35,7 @@ export default function MesafeliSatisSozlesmesi() {
           <section>
             <h2 style={{color:'#222', fontWeight:500, fontSize:18, marginBottom:6}}>5. Cayma Hakkı</h2>
             <div style={{fontSize:15}}>
-              Dijital içerik ve anında ifa edilen hizmetlerde, 6502 sayılı Kanun gereği cayma hakkı istisnası uygulanır. Alıcı firma, hizmetin ifasına başlandığı anda cayma hakkını kaybeder. Ancak, hizmetin ifasına başlanmamışsa, 14 gün içinde cayma hakkı kullanılabilir. Cayma talepleri <a href="mailto:destek@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>destek@yakalahadi.com</a> adresine iletilmelidir.
+              Dijital içerik ve anında ifa edilen hizmetlerde, 6502 sayılı Kanun gereği cayma hakkı istisnası uygulanır. Alıcı firma, hizmetin ifasına başlandığı anda cayma hakkını kaybeder. Ancak, hizmetin ifasına başlanmamışsa, 14 gün içinde cayma hakkı kullanılabilir. Cayma talepleri <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a> adresine iletilmelidir.
             </div>
           </section>
           <section>

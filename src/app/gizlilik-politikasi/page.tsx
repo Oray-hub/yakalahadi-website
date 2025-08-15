@@ -77,7 +77,7 @@ export default function GizlilikPolitikasi() {
               • İşlenen verilerin yalnızca otomatik sistemlerle analiz edilmesi sonucu aleyhinize bir durum oluşmasına itiraz etme<br/>
               • Kanuna aykırı işleme nedeniyle zarara uğramanız hâlinde zararın giderilmesini talep etme<br/><br/>
               Taleplerinizi e-posta yoluyla bize iletebilirsiniz:<br/>
-              📧 <a href="mailto:destek@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>destek@yakalahadi.com</a>
+              📧 <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a>
             </div>
           </section>
           <section>
@@ -108,7 +108,7 @@ export default function GizlilikPolitikasi() {
             <div style={{fontSize:15}}>
               <strong>Yakalahadi Yazılım Hizmetleri Ltd.Şti.</strong><br/>
               Adres: Toros mah. 78143 sk. Hilal Tower No: 4/A Çukurova / Adana<br/>
-              E-posta: <a href="mailto:destek@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>destek@yakalahadi.com</a><br/>
+              E-posta: <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a><br/>
               Web: <a href="https://www.yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>www.yakalahadi.com</a>
             </div>
           </section>
