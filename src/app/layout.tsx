@@ -34,6 +34,15 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  other: {
+    'application/ld+json': JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "YakalaHadi",
+      url: "https://yakalahadi.com",
+      logo: "https://yakalahadi.com/favicon.ico",
+    })
+  }
 };
 
 export const viewport = {
@@ -49,18 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "YakalaHadi",
-              url: "https://yakalahadi.com",
-              logo: "https://yakalahadi.com/favicon.ico",
-            }),
-          }}
-        />
+        {/* Structured data script kaldırıldı, Metadata API ile ekleniyor */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
