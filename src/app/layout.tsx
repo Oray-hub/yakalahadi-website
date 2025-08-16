@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "Organization",
               name: "YakalaHadi",
               url: "https://yakalahadi.com",
-              logo: "/logo-512.png"
+              logo: "https://yakalahadi.com/logo-512.png"
             })
           }}
         />
