@@ -38,15 +38,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  other: {
-    'application/ld+json': JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "YakalaHadi",
-      url: "https://yakalahadi.com",
-      logo: "/logo-512.png"
-    })
-  }
 };
 
 export const viewport = {
@@ -60,8 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="tr">
       <head>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        {/* Tek schema.org Organization (JSON-LD) — kalsın */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
