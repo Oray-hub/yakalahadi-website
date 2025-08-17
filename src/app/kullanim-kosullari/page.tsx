@@ -29,6 +29,7 @@ export default function KullanimKosullari() {
       }}>
         <section style={{marginBottom: '30px'}}>
           <h2 style={{color: '#6A0DAD', fontSize: '1.5rem', marginBottom: '15px'}}>1. Genel Hükümler</h2>
+          <p>Yakalahadi, firmalar ile kullanıcıları buluşturan bir kampanya platformudur. Ürün/hizmet satışı ve tesliminden ilgili işletme sorumludur.</p>
           <p>YakalaHadi uygulamasını kullanarak aşağıdaki koşulları kabul etmiş sayılırsınız. Bu koşullar, uygulamanın kullanımı ile ilgili tüm hak ve yükümlülükleri düzenler.</p>
         </section>
 
