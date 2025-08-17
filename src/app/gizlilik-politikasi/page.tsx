@@ -7,14 +7,9 @@ export default function GizlilikPolitikasi() {
         <h1 style={{fontSize: 28, fontWeight: 700, color: '#6A0DAD', marginBottom: 18}}>Gizlilik ve Güvenlik Politikası</h1>
         <div style={{fontSize: 16, color: '#333', marginBottom: 8, fontWeight: 500}}>Yürürlük Tarihi: 12/08/2025</div>
         <div style={{marginTop: 24, marginBottom: 24, display:'flex', flexDirection:'column', gap:24}}>
-          <section>
-            <div style={{fontSize:15}}>
-              YakalaHadi mobil uygulamasını kullanan tüm bireyler, aşağıda belirtilen Gizlilik ve Güvenlik Politikası'nı okumuş, anlamış ve kabul etmiş sayılır. Bu politika, yalnızca YakalaHadi uygulaması için geçerli olup, uygulama içerisinden yönlendirilen farklı internet siteleri veya mobil uygulamalar bu kapsamda değildir.
-            </div>
-            <div style={{fontSize:15, marginTop: '16px', marginBottom: '16px', color:'#6A0DAD', fontWeight:600}}>
-              Yakalahadi, firmalar ile kullanıcıları buluşturan bir kampanya platformudur. Ürün/hizmet satışı ve tesliminden ilgili işletme sorumludur.
-            </div>
-          </section>
+          <div style={{fontSize:15}}>
+            Yakalahadi, firmalar ile kullanıcıları buluşturan bir kampanya platformudur. Ürün/hizmet satışı ve tesliminden ilgili işletme sorumludur.
+          </div>
           <section>
             <h2 style={{color:'#111', fontWeight:500}}>1. İşlenen Kişisel Veriler</h2>
             <div style={{fontSize:15}}>
