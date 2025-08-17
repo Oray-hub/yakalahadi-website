@@ -179,7 +179,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 flexDirection: 'column',
                 gap: '4px'
               }}>
-                <Link href="/kullanici-sozlesmesi" style={{
+                <Link href="/kullanim-kosullari" style={{
                   color: '#fff',
                   textDecoration: 'underline',
                   fontSize: '14px'
