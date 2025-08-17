@@ -10,6 +10,9 @@ export default function KullanimKosullari() {
         <section>
           <h2 style={{color:'#111', fontWeight:500}}>1. Genel Hükümler</h2>
           <div style={{fontSize:15}}>Bu internet sitesinin ve mobil uygulamanın (“Platform”) her türlü kullanım ve tasarruf yetkisi Yakalahadi.com’a aittir. Yakalahadi.com alan adlı internet sitesini ve mobil uygulamayı kayıt olarak (“Kullanıcı”) ve/veya Platform’a “Firma” olarak, işbu Kullanım Koşulları’nı okuduğunuzu, içeriğini tamamen anladığınızı ve herhangi bir sınırlama olmaksızın kabul ettiğinizi beyan etmiş olursunuz.</div>
+          <div style={{fontSize:15}}>
+            Yakalahadi, firmalar ile kullanıcıları buluşturan bir kampanya platformudur. Ürün/hizmet satışı ve tesliminden ilgili işletme sorumludur.
+          </div>
         </section>
         <section>
           <h2 style={{color:'#111', fontWeight:500}}>2. Üyelik ve Kullanıcı Sorumlulukları</h2>
