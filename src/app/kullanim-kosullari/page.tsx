@@ -5,17 +5,11 @@ export default function KullanimKosullari() {
     <div style={{marginTop: '80px'}}>
       <div style={{maxWidth: 800, margin: '40px auto', padding: 32, background: '#fff', borderRadius: 18, boxShadow: '0 2px 12px #eee'}}>
       <h1 style={{fontSize: 28, fontWeight: 700, color: '#6A0DAD', marginBottom: 18}}>Kullanım Koşulları</h1>
-      <div style={{fontSize:15, marginBottom:'18px'}}>
-        Yakalahadi, firmalar ile kullanıcıları buluşturan bir kampanya platformudur. Ürün/hizmet satışı ve tesliminden ilgili işletme sorumludur.
-      </div>
       <div style={{fontSize: 16, color: '#333', marginBottom: 8, fontWeight: 500}}>Yürürlük Tarihi: 12/08/2025</div>
       <div style={{marginTop: 24, marginBottom: 24, display:'flex', flexDirection:'column', gap:24}}>
         <section>
           <h2 style={{color:'#111', fontWeight:500}}>1. Genel Hükümler</h2>
           <div style={{fontSize:15}}>Bu internet sitesinin ve mobil uygulamanın (“Platform”) her türlü kullanım ve tasarruf yetkisi Yakalahadi.com’a aittir. Yakalahadi.com alan adlı internet sitesini ve mobil uygulamayı kayıt olarak (“Kullanıcı”) ve/veya Platform’a “Firma” olarak, işbu Kullanım Koşulları’nı okuduğunuzu, içeriğini tamamen anladığınızı ve herhangi bir sınırlama olmaksızın kabul ettiğinizi beyan etmiş olursunuz.</div>
-          <div style={{fontSize:15}}>
-            Yakalahadi, firmalar ile kullanıcıları buluşturan bir kampanya platformudur. Ürün/hizmet satışı ve tesliminden ilgili işletme sorumludur.
-          </div>
         </section>
         <section>
           <h2 style={{color:'#111', fontWeight:500}}>2. Üyelik ve Kullanıcı Sorumlulukları</h2>
