@@ -24,7 +24,7 @@ export default function CaymaIptalIade() {
             <div style={{fontSize:15}}>
               - Dijital hizmetin sunulmasına başlanmamışsa, firma tarafından yapılan satın alma işlemi iptal edilebilir ve ücret iadesi talep edilebilir.<br/>
               - Hizmetin sunulmasına başlandıktan sonra iptal ve iade mümkün değildir.<br/>
-              - İade talepleri, ödeme yapılan PayTR altyapısı üzerinden ve yasal mevzuata uygun şekilde gerçekleştirilir.<br/>
+              - İade talepleri, ödeme yapılan İyzico altyapısı üzerinden ve yasal mevzuata uygun şekilde gerçekleştirilir.<br/>
               - İptal/iade talepleri için <a href="mailto:info@yakalahadi.com" style={{color:'#6A0DAD',textDecoration:'underline'}}>info@yakalahadi.com</a> adresine başvurulmalıdır.
             </div>
           </section>

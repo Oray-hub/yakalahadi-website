@@ -41,7 +41,7 @@ export default function MesafeliSatisSozlesmesi() {
           <section>
             <h2 style={{color:'#222', fontWeight:500, fontSize:18, marginBottom:6}}>6. Ücret ve Ödeme</h2>
             <div style={{fontSize:15}}>
-              Hizmet bedeli, uygulama/web sitesinde ilan edilen fiyat olup, ödeme PayTR altyapısı ile güvenli şekilde tahsil edilir. Fatura, dijital olarak iletilir.
+              Hizmet bedeli, uygulama/web sitesinde ilan edilen fiyat olup, ödeme İyzico altyapısı ile güvenli şekilde tahsil edilir. Fatura, dijital olarak iletilir.
             </div>
           </section>
           <section>
