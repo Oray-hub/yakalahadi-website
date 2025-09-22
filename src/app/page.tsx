@@ -31,7 +31,7 @@ const heroSlides = [
           <Image src="/logo5.png" alt="YakalaHadi Logo" width={180} height={180} priority style={{marginTop:'12px',marginBottom:'-6px'}} />
           <Image src="/YakalaHadi1.png" alt="YakalaHadi" width={360} height={96} priority style={{margin:'0 0 10px 0'}} />
         </div>
-        <p className={styles.slogan}>Ayağına gelen fırsatları anında yakala!</p>
+        <p className={styles.slogan}>Cebine gelen fırsatları anında yakala!</p>
         <p className={styles.desc}>YakalaHadi ile gerçek zamanlı fırsat ve kampanyaları kaçırma. Hemen indir, fırsatları yakala!</p>
         <div className={styles.stores}>
           <Image src="/apple.webp" alt="App Store" width={180} height={60} />
