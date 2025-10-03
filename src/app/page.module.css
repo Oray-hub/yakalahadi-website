@@ -150,6 +150,21 @@
   margin-bottom: 10px;
 }
 
+.storeLink {
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.storeLink:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.storeLink:active {
+  transform: scale(0.98);
+}
+
 .storeBtn {
   background: #6A0DAD;
   color: #fff;
