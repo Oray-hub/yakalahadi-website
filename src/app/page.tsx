@@ -34,7 +34,7 @@ const heroSlides = [
         <p className={styles.slogan}>Cebine gelen fırsatları anında yakala!</p>
         <p className={styles.desc}>YakalaHadi ile gerçek zamanlı fırsat ve kampanyaları kaçırma. Hemen indir, fırsatları yakala!</p>
         <div className={styles.stores}>
-          <a href="https://apps.apple.com/app/yakalahadi" target="_blank" rel="noopener noreferrer" className={styles.storeLink}>
+          <a href="https://apps.apple.com/tr/app/yakalahadi/id6752722925?l=tr" target="_blank" rel="noopener noreferrer" className={styles.storeLink}>
             <Image src="/apple.webp" alt="App Store'dan İndir" width={180} height={60} />
           </a>
           <a href="https://play.google.com/store/apps/details?id=com.yakalahadi.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className={styles.storeLink}>
