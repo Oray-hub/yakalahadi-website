@@ -79,10 +79,6 @@ export default function QRPage() {
         </a>
       </div>
 
-      {/* Copyright */}
-      <div className={styles.footer}>
-        © 2025 YakalaHadi. Tüm hakları saklıdır.
-      </div>
     </div>
   );
 }
