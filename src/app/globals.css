@@ -95,6 +95,19 @@ body[data-page="iletisim"] {
   }
 }
 
+/* QR sayfası için sadece footer'ı gizle */
+body.qr-page footer {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  z-index: -9999 !important;
+}
+
 /* Header küçülme animasyonu, kaybolma yok */
 .header {
   position: fixed;

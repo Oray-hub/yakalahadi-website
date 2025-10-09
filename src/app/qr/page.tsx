@@ -1,9 +1,19 @@
 "use client";
 
 import Image from 'next/image';
+import { useEffect } from 'react';
 import styles from './page.module.css';
 
 export default function QRPage() {
+  useEffect(() => {
+    // Body'ye qr-page sınıfını ekle (sadece footer gizlemek için)
+    document.body.classList.add('qr-page');
+    
+    return () => {
+      // Cleanup
+      document.body.classList.remove('qr-page');
+    };
+  }, []);
 
   return (
     <div className={styles.qrPage}>
@@ -69,6 +79,10 @@ export default function QRPage() {
         </a>
       </div>
 
+      {/* Copyright */}
+      <div className={styles.footer}>
+        © 2025 YakalaHadi. Tüm hakları saklıdır.
+      </div>
     </div>
   );
 }
