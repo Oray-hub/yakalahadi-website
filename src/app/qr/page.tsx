@@ -1,16 +1,10 @@
 "use client";
 
 import Image from 'next/image';
-import Head from 'next/head';
 
 export default function QRPage() {
   return (
     <>
-      <Head>
-        <title>YakalaHadi - Fırsatları Kaçırma</title>
-        <meta name="description" content="YakalaHadi ile gerçek zamanlı fırsat ve kampanyaları kaçırma. Hemen indir, fırsatları yakala!" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
       
       <div style={{
         minHeight: '100vh',
@@ -27,27 +21,6 @@ export default function QRPage() {
         overflow: 'hidden'
       }}>
         
-        {/* Header */}
-        <div style={{
-          position: 'absolute',
-          top: '16px',
-          right: '16px'
-        }}>
-          <div style={{
-            width: '20px',
-            height: '20px',
-            background: '#6A0DAD',
-            borderRadius: '4px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer'
-          }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-              <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
-            </svg>
-          </div>
-        </div>
 
         {/* Logo and Title */}
         <div style={{ 
