@@ -1,10 +1,45 @@
 "use client";
 
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 export default function QRPage() {
+  useEffect(() => {
+    // Header ve footer'ı gizle
+    const header = document.querySelector('header') || document.querySelector('[data-page="default"]')?.previousElementSibling;
+    const footer = document.querySelector('footer');
+    
+    if (header) header.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+    
+    // Body'yi temizle
+    document.body.style.margin = '0';
+    document.body.style.padding = '0';
+    document.body.style.overflow = 'hidden';
+    
+    return () => {
+      // Cleanup
+      if (header) header.style.display = '';
+      if (footer) footer.style.display = '';
+      document.body.style.margin = '';
+      document.body.style.padding = '';
+      document.body.style.overflow = '';
+    };
+  }, []);
+
   return (
-    <>
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      margin: 0,
+      padding: 0,
+      background: '#ffffff',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      overflow: 'hidden'
+    }}>
       
       <div style={{
         minHeight: '100vh',
@@ -171,6 +206,6 @@ export default function QRPage() {
           © 2025 YakalaHadi. Tüm hakları saklıdır.
         </div>
       </div>
-    </>
+    </div>
   );
 }
