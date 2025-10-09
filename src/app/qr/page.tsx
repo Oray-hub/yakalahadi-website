@@ -9,8 +9,8 @@ export default function QRPage() {
     const header = document.querySelector('header') || document.querySelector('[data-page="default"]')?.previousElementSibling;
     const footer = document.querySelector('footer');
     
-    if (header) header.style.display = 'none';
-    if (footer) footer.style.display = 'none';
+    if (header) (header as HTMLElement).style.display = 'none';
+    if (footer) (footer as HTMLElement).style.display = 'none';
     
     // Body'yi temizle
     document.body.style.margin = '0';
@@ -20,8 +20,8 @@ export default function QRPage() {
     
     return () => {
       // Cleanup
-      if (header) header.style.display = '';
-      if (footer) footer.style.display = '';
+      if (header) (header as HTMLElement).style.display = '';
+      if (footer) (footer as HTMLElement).style.display = '';
       document.body.style.margin = '';
       document.body.style.padding = '';
       document.body.style.overflow = '';
