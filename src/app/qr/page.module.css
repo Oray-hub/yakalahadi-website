@@ -12,35 +12,36 @@
   padding: 0 !important;
   background: #ffffff !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  overflow: auto !important;
-  -webkit-overflow-scrolling: touch !important;
+  overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
   color: #6A0DAD !important;
   text-align: center !important;
-  min-height: 100vh !important;
-  min-width: 100vw !important;
   z-index: 9999 !important;
+  /* Scroll tamamen yasak */
+  overscroll-behavior: none !important;
+  -webkit-overflow-scrolling: auto !important;
 }
 
 /* QR sayfası için global stilleri override et */
 .qrPage :global(html) {
   background: #ffffff !important;
   background-image: none !important;
-  background-attachment: scroll !important;
   margin: 0 !important;
   padding: 0 !important;
   height: 100% !important;
   width: 100% !important;
   overflow: hidden !important;
+  /* Scroll tamamen yasak */
+  overscroll-behavior: none !important;
+  -webkit-overflow-scrolling: auto !important;
 }
 
 .qrPage :global(body) {
   background: #ffffff !important;
   background-image: none !important;
-  background-attachment: scroll !important;
   margin: 0 !important;
   padding: 0 !important;
   height: 100% !important;
@@ -49,6 +50,30 @@
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
+  /* Scroll tamamen yasak */
+  overscroll-behavior: none !important;
+  -webkit-overflow-scrolling: auto !important;
+}
+
+/* Tüm elementleri beyaz yap */
+.qrPage :global(*) {
+  background-color: transparent !important;
+}
+
+.qrPage :global(div) {
+  background-color: transparent !important;
+}
+
+.qrPage :global(section) {
+  background-color: transparent !important;
+}
+
+.qrPage :global(header) {
+  background-color: transparent !important;
+}
+
+.qrPage :global(footer) {
+  background-color: transparent !important;
 }
 
 /* Header'ı gizle */
@@ -66,29 +91,26 @@
   display: none !important;
 }
 
-/* QR sayfası container'ı */
-.qrContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #6A0DAD;
-  text-align: center;
-  min-height: 100vh;
-  min-width: 100vw;
+/* Scrollbar'ı tamamen gizle - tüm tarayıcılar için */
+.qrPage,
+.qrPage :global(html),
+.qrPage :global(body),
+.qrPage * {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+  /* Scroll tamamen yasak */
+  overscroll-behavior: none !important;
+  -webkit-overflow-scrolling: auto !important;
+}
+
+.qrPage::-webkit-scrollbar,
+.qrPage :global(html)::-webkit-scrollbar,
+.qrPage :global(body)::-webkit-scrollbar,
+.qrPage *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
 }
 
 .logoSection {
@@ -177,18 +199,12 @@
   z-index: 1000;
 }
 
-/* Mobil cihazlarda ekstra güvenlik */
+/* Tüm cihazlarda basit beyaz arka plan */
 @media (max-width: 768px) {
   .qrPage,
-  .qrContainer {
-    background: #ffffff !important;
-    background-image: none !important;
-  }
-  
   .qrPage :global(html),
   .qrPage :global(body) {
     background: #ffffff !important;
     background-image: none !important;
-    background-attachment: scroll !important;
   }
 }
