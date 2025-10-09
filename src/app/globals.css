@@ -21,12 +21,8 @@
 
 body, html {
   min-height: 100vh !important;
-  background: linear-gradient(135deg, #f8f3ff 0%, #e9d8fb 100%) !important;
-  background-image: url('/arka_plan5.jpg'), linear-gradient(135deg, #f8f3ff 0%, #e9d8fb 100%) !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-attachment: scroll !important;
+  /* Tamamen açık mor arka plan */
+  background: #f8f3ff !important;
   /* Kopyalama koruması */
   -webkit-user-select: none !important;
   -moz-user-select: none !important;
@@ -43,8 +39,8 @@ body {
 /* Mobil cihazlarda status bar sorununu önlemek için */
 @media (max-width: 768px) {
   body, html {
-    background-attachment: scroll !important;
-    background-position: top center !important;
+    /* Tamamen açık mor arka plan */
+    background: #f8f3ff !important;
     /* Safe area için padding ekle */
     padding-top: env(safe-area-inset-top, 0) !important;
   }
@@ -60,10 +56,8 @@ body {
 /* Mobil cihazlarda daha agresif arka plan kontrolü */
 @media (max-width: 768px) and (orientation: portrait) {
   body, html {
-    background-attachment: scroll !important;
-    background-position: top center !important;
-    background-size: 100% auto !important;
-    background-repeat: no-repeat !important;
+    /* Tamamen açık mor arka plan */
+    background: #f8f3ff !important;
   }
   
   /* Header'ın üst kısmını beyaz yap */

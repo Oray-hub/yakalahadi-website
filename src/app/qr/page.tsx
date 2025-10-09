@@ -69,10 +69,6 @@ export default function QRPage() {
         </a>
       </div>
 
-      {/* Footer */}
-      <div className={styles.footer}>
-        © 2025 YakalaHadi. Tüm hakları saklıdır.
-      </div>
     </div>
   );
 }
