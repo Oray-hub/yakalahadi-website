@@ -1,0 +1,194 @@
+/* QR sayfası için özel CSS - Global CSS'i override eder */
+
+.qrPage {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #6A0DAD !important;
+  text-align: center !important;
+  min-height: 100vh !important;
+  min-width: 100vw !important;
+  z-index: 9999 !important;
+}
+
+/* QR sayfası için global stilleri override et */
+.qrPage :global(html) {
+  background: #ffffff !important;
+  background-image: none !important;
+  background-attachment: scroll !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+.qrPage :global(body) {
+  background: #ffffff !important;
+  background-image: none !important;
+  background-attachment: scroll !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/* Header'ı gizle */
+.qrPage :global(.header) {
+  display: none !important;
+}
+
+/* Footer'ı gizle */
+.qrPage :global(footer) {
+  display: none !important;
+}
+
+/* Ana container'ı gizle */
+.qrPage :global(main) {
+  display: none !important;
+}
+
+/* QR sayfası container'ı */
+.qrContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6A0DAD;
+  text-align: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.logoSection {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.title {
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+}
+
+.logo {
+  border-radius: 35px;
+  display: block;
+  margin: 0 auto 15px auto;
+  width: 180px;
+  height: 180px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.tagline {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-weight: 500;
+  margin: 0 0 40px 0;
+  color: #6A0DAD;
+  line-height: 1.4;
+  max-width: 400px;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.downloadButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 280px;
+  padding: 0 16px;
+}
+
+.downloadLink {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  width: 100%;
+}
+
+.downloadLink:hover {
+  transform: scale(1.02);
+}
+
+.downloadButton {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  max-width: 280px;
+  min-width: 200px;
+}
+
+.googlePlayButton {
+  box-shadow: 0 4px 16px rgba(52,168,83,0.3);
+}
+
+.footer {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(10px, 3vw, 12px);
+  opacity: 0.7;
+  color: #6A0DAD;
+  padding: 0 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  z-index: 1000;
+}
+
+/* Mobil cihazlarda ekstra güvenlik */
+@media (max-width: 768px) {
+  .qrPage,
+  .qrContainer {
+    background: #ffffff !important;
+    background-image: none !important;
+  }
+  
+  .qrPage :global(html),
+  .qrPage :global(body) {
+    background: #ffffff !important;
+    background-image: none !important;
+    background-attachment: scroll !important;
+  }
+}
