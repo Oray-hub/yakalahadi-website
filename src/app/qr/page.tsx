@@ -3,90 +3,59 @@
 import Image from 'next/image';
 import { useEffect } from 'react';
 
-// Global CSS for full screen
-const globalStyles = `
-  * {
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-  
-  html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    overflow: hidden !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-  }
-  
-  #__next {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-  }
-`;
-
 export default function QRPage() {
   useEffect(() => {
-    // Global CSS'i ekle
-    const styleElement = document.createElement('style');
-    styleElement.textContent = globalStyles;
-    styleElement.setAttribute('data-qr-styles', 'true');
-    document.head.appendChild(styleElement);
-    
+    // Viewport meta tag ekle
+    const viewport = document.querySelector('meta[name="viewport"]');
+    if (viewport) {
+      viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover');
+    }
+  }, []);
+
+  useEffect(() => {
     // Header ve footer'ı gizle
     const header = document.querySelector('header') || document.querySelector('[data-page="default"]')?.previousElementSibling;
     const footer = document.querySelector('footer');
-    const main = document.querySelector('main');
+    const html = document.documentElement;
     
     if (header) (header as HTMLElement).style.display = 'none';
     if (footer) (footer as HTMLElement).style.display = 'none';
-    if (main) (main as HTMLElement).style.display = 'none';
     
-    // Body ve HTML'i temizle
+    // Body ve HTML'yi temizle
+    html.style.margin = '0';
+    html.style.padding = '0';
+    html.style.height = '100%';
+    html.style.width = '100%';
+    html.style.overflow = 'hidden';
+    
     document.body.style.margin = '0';
     document.body.style.padding = '0';
+    document.body.style.height = '100%';
+    document.body.style.width = '100%';
     document.body.style.overflow = 'hidden';
     document.body.style.background = '#ffffff';
     document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-    document.body.style.height = '100%';
     document.body.style.top = '0';
     document.body.style.left = '0';
     
-    document.documentElement.style.margin = '0';
-    document.documentElement.style.padding = '0';
-    document.documentElement.style.overflow = 'hidden';
-    document.documentElement.style.height = '100%';
-    
     return () => {
-      // Global CSS'i kaldır
-      const existingStyle = document.head.querySelector('style[data-qr-styles]');
-      if (existingStyle) existingStyle.remove();
-      
       // Cleanup
       if (header) (header as HTMLElement).style.display = '';
       if (footer) (footer as HTMLElement).style.display = '';
-      if (main) (main as HTMLElement).style.display = '';
-      
+      html.style.margin = '';
+      html.style.padding = '';
+      html.style.height = '';
+      html.style.width = '';
+      html.style.overflow = '';
       document.body.style.margin = '';
       document.body.style.padding = '';
+      document.body.style.height = '';
+      document.body.style.width = '';
       document.body.style.overflow = '';
       document.body.style.background = '';
       document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.height = '';
       document.body.style.top = '';
       document.body.style.left = '';
-      
-      document.documentElement.style.margin = '';
-      document.documentElement.style.padding = '';
-      document.documentElement.style.overflow = '';
-      document.documentElement.style.height = '';
     };
   }, []);
 
@@ -97,21 +66,22 @@ export default function QRPage() {
       left: 0,
       right: 0,
       bottom: 0,
-      width: '100vw',
-      height: '100vh',
-      minHeight: '100vh',
+      width: '100%',
+      height: '100%',
       margin: 0,
       padding: 0,
       background: '#ffffff',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-      overflow: 'hidden',
+      overflow: 'auto',
+      WebkitOverflowScrolling: 'touch',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       color: '#6A0DAD',
       textAlign: 'center',
-      zIndex: 9999
+      minHeight: '100vh',
+      minWidth: '100vw'
     }}>
       
       {/* Logo and Title */}
